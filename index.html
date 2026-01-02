@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>TPAO Petroleum Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+
+<!-- OVERLAY -->
+<div class="overlay" id="overlay" onclick="closeSidebar(true)"></div>
+
+<!-- MENU BUTTON -->
+<div class="menu-btn" onclick="openSidebar()">
+  <i class="fas fa-bars"></i>
+</div>
+
+<div class="dashboard">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar">
+    <h2>TPAO Petroleum</h2>
+    <a href="index.html"><i class="fas fa-chart-line"></i> Dashboard</a>
+    <a href="production.html"><i class="fas fa-industry"></i> Production</a>
+    <a href="revenue.html"><i class="fas fa-dollar-sign"></i> Revenue</a>
+    <a href="fields.html"><i class="fas fa-oil-well"></i> Oil Fields</a>
+    <a href="contact.html"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="officials.html"><i class="fas fa-dollar-sign"></i> senior official's</a>
+    <a href="employment.html"><i class="fas fa-oil-well"></i> employment</a>
+    <a href="about.html"><i class="fas fa-envelope"></i> about</a>
+        <a href="staffs.html"><i class="fas fa-envelope"></i> staffs</a>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-text">
+        <h1>TPAO Petroleum Company</h1>
+        <p>
+          Powering global energy through innovation, operational excellence,
+          and responsible petroleum development.
+        </p>
+      </div>
+
+      <div class="hero-images">
+        <img src="https://images.unsplash.com/photo-1617957743094-8f69bdf9b9c4" alt="">
+        <img src="https://images.unsplash.com/photo-1601134467661-3c0b2fdd0a41" alt="">
+        <img src="https://images.unsplash.com/photo-1581091870627-3c5f2c1cfb34" alt="">
+      </div>
+    </section>
+
+    <!-- HEADER -->
+    <header class="header">
+      <h2>Dashboard Overview</h2>
+      <p>Operational insights and corporate performance snapshot</p>
+    </header>
+
+    <!-- CARDS -->
+    <section class="cards">
+
+      <article class="card">
+        <img src="images/fatih_drill.jpg" alt="TPAO Drilling Operations">
+        <div class="card-content">
+          <h3>Company Overview</h3>
+          <p>
+            TPAO Petroleum is a leading energy company focused on exploration,
+            production, and sustainable petroleum development across global markets.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/sddefault.jpg" alt="Refinery Operations">
+        <div class="card-content">
+          <h3>Production Operations</h3>
+          <p>
+            Advanced production facilities ensure efficiency, safety,
+            and environmentally responsible extraction processes.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/160237.jpg" alt="Oil Field Infrastructure">
+        <div class="card-content">
+          <h3>Revenue Performance</h3>
+          <p>
+            Strong financial growth driven by strategic investments,
+            global partnerships, and operational excellence.
+          </p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/282_wuk5ENk.jpg" alt="Energy Production Facilities">
+        <div class="card-content">
+          <h3>Oil Fields</h3>
+          <p>
+            Multiple oil fields across regions supporting energy security
+            and local economic development.
+          </p>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- FOOTER SOCIAL LINKS -->
+    <footer class=" <p>Connect with TPAO Petroleum</p>
+
+      <div class="social-links">
+        <a href="mailto:info@tpao.com" aria-label="Email">
+          <i class="fas fa-envelope"></i>
+        </a>
+        <a href="#" aria-label="Facebook">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a href="#" aria-label="Twitter">
+          <i class="fab fa-x-twitter"></i>
+        </a>
+        <a href="#" aria-label="LinkedIn">
+          <i class="fab fa-linkedin-in"></i>
+        </a>
+        <a href="#" aria-label="Instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+      </div>
+
+      <p class="copyright">
+        © 2025 TPAO Petroleum Company
+      </p>
+    </footer>
+
+  </main>
+</div>
+
+<script>
+let sidebarOpen = false;
+
+function openSidebar() {
+  document.getElementById("sidebar").classList.add("active");
+  document.getElementById("overlay").classList.add("active");
+  sidebarOpen = true;
+  history.pushState({ sidebar: true }, "");
+}
+
+function closeSidebar(fromOverlay = false) {
+  document.getElementById("sidebar").classList.remove("active");
+  document.getElementById("overlay").classList.remove("active");
+  sidebarOpen = false;
+  if (fromOverlay) history.back();
+}
+
+window.onpopstate = function () {
+  if (sidebarOpen) closeSidebar();
+};
+</script>
+
+</body>
+          </html>
